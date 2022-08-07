@@ -82,7 +82,7 @@ class CompanyControllerTest {
     }
 
     @Test
-    void company_WithNonExistingCompany_ReturnBadRequest() throws Exception {
+    void company_WithNonExistingCompany_ReturnNotFound() throws Exception {
         when(companyInfoFacadeService.fetchCompanyInfo(0)).thenThrow(new EntityNotFoundException());
 
         mockMvc.perform(get("/company/0"))
@@ -91,7 +91,7 @@ class CompanyControllerTest {
     }
 
     @Test
-    void company_WithNegativeCompanyId_ReturnBadRequest() throws Exception {
+    void company_WithNegativeCompanyId_ReturnNotFound() throws Exception {
         when(companyInfoFacadeService.fetchCompanyInfo(-1)).thenThrow(new EntityNotFoundException());
 
         mockMvc.perform(get("/company/-1"))
