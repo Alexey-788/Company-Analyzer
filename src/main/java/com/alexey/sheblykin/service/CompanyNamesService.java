@@ -6,6 +6,7 @@ import com.alexey.sheblykin.repository.CompanyRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Service works with {@link CompanyRepository}.
@@ -16,11 +17,20 @@ import java.util.List;
 @Service
 public class CompanyNamesService {
 
+    private final CompanyRepository companyRepository;
+
+    public CompanyNamesService(CompanyRepository companyRepository) {
+        this.companyRepository = companyRepository;
+    }
+
     public CompanyNamesDto getById(long id) {
-        return null;
+        return new CompanyNamesDto(companyRepository.getReferenceById(id));
     }
 
     public List<CompanyNamesDto> getAll() {
-        return null;
+        List<CompanyEntity> companyEntities = companyRepository.findAll();
+        return companyEntities.stream()
+            .map(CompanyNamesDto::new)
+            .collect(Collectors.toList());
     }
 }

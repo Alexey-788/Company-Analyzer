@@ -7,7 +7,9 @@ public class CompanyFullInfoDto {
     private long id;
     private String name;
     private CompanyIndeedInfoDto indeedInfo;
-    private         CompanyYahooFinanceInfoDto yahooFinanceInfo;
+    private CompanyYahooFinanceInfoDto yahooFinanceInfo;
+
+    public CompanyFullInfoDto() {}
 
     public CompanyFullInfoDto(long id,
                               String name,
