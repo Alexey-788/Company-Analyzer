@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -29,14 +30,15 @@ public class CompanyController {
      */
     @GetMapping("/list")
     public ResponseEntity<List<CompanyNamesDto>> namesList() {
-        return null;
+        return ResponseEntity.ok(companyNamesService.getAll());
     }
 
     /**
      * Current company info.
      */
     @GetMapping("/{companyId}")
-    public ResponseEntity<CompanyFullInfoDto> company(@PathVariable long companyId) {
-        return null;
+    public ResponseEntity<CompanyFullInfoDto> company(@PathVariable long companyId) throws IOException {
+        CompanyFullInfoDto fullInfo = companyInfoFacadeService.fetchCompanyInfo(companyId);
+        return ResponseEntity.ok(fullInfo);
     }
 }
