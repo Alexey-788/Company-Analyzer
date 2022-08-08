@@ -1,9 +1,9 @@
-package com.alexey.sheblykin.service;
+package com.alexey.sheblykin.service.company;
 
-import com.alexey.sheblykin.dto.CompanyFullInfoDto;
-import com.alexey.sheblykin.dto.CompanyIndeedInfoDto;
-import com.alexey.sheblykin.dto.CompanyIndeedRatingDto;
-import com.alexey.sheblykin.dto.CompanyNamesDto;
+import com.alexey.sheblykin.dto.company.CompanyFullInfoDto;
+import com.alexey.sheblykin.dto.company.CompanyIndeedInfoDto;
+import com.alexey.sheblykin.dto.company.CompanyIndeedRatingDto;
+import com.alexey.sheblykin.dto.company.CompanyNamesDto;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;

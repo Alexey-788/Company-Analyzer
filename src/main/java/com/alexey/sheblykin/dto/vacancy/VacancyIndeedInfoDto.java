@@ -1,4 +1,4 @@
-package com.alexey.sheblykin.dto;
+package com.alexey.sheblykin.dto.vacancy;
 
 import java.util.Objects;
 

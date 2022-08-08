@@ -1,7 +1,9 @@
-package com.alexey.sheblykin.service;
+package com.alexey.sheblykin.service.company;
 
-import com.alexey.sheblykin.dto.CompanyFullInfoDto;
-import com.alexey.sheblykin.dto.CompanyNamesDto;
+import com.alexey.sheblykin.dto.company.CompanyFullInfoDto;
+import com.alexey.sheblykin.dto.company.CompanyNamesDto;
+import com.alexey.sheblykin.service.company.CompanyInfoFacadeDataService;
+import com.alexey.sheblykin.service.company.CompanyNamesService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +18,20 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
-class CompanyInfoFacadeServiceTest {
+class CompanyInfoFacadeDataServiceTest {
 
     @MockBean
     CompanyNamesService companyNamesService;
 
     @Autowired
-    CompanyInfoFacadeService companyInfoFacadeService;
+    CompanyInfoFacadeDataService companyInfoFacadeDataService;
 
     @Test
     void fetchCompanyInfo_FetchingAmazonInfo_LoadsFields() throws IOException {
         when(companyNamesService.getById(0))
                 .thenReturn(new CompanyNamesDto(0, "Amazon.com", "AMZN"));
 
-        CompanyFullInfoDto companyInfo = companyInfoFacadeService.fetchCompanyInfo(0);
+        CompanyFullInfoDto companyInfo = companyInfoFacadeDataService.fetchCompanyInfo(0);
 
         assertEquals(0, companyInfo.getId());
         assertEquals("Amazon.com", companyInfo.getName());

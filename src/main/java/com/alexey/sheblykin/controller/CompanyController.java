@@ -1,9 +1,9 @@
 package com.alexey.sheblykin.controller;
 
-import com.alexey.sheblykin.dto.CompanyFullInfoDto;
-import com.alexey.sheblykin.dto.CompanyNamesDto;
-import com.alexey.sheblykin.service.CompanyInfoFacadeService;
-import com.alexey.sheblykin.service.CompanyNamesService;
+import com.alexey.sheblykin.dto.company.CompanyFullInfoDto;
+import com.alexey.sheblykin.dto.company.CompanyNamesDto;
+import com.alexey.sheblykin.service.company.CompanyInfoFacadeDataService;
+import com.alexey.sheblykin.service.company.CompanyNamesService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,11 +18,11 @@ import java.util.List;
 public class CompanyController {
 
     private final CompanyNamesService companyNamesService;
-    private final CompanyInfoFacadeService companyInfoFacadeService;
+    private final CompanyInfoFacadeDataService companyInfoFacadeDataService;
 
-    public CompanyController(CompanyNamesService companyNamesService, CompanyInfoFacadeService companyInfoFacadeService) {
+    public CompanyController(CompanyNamesService companyNamesService, CompanyInfoFacadeDataService companyInfoFacadeDataService) {
         this.companyNamesService = companyNamesService;
-        this.companyInfoFacadeService = companyInfoFacadeService;
+        this.companyInfoFacadeDataService = companyInfoFacadeDataService;
     }
 
     /**
@@ -38,7 +38,7 @@ public class CompanyController {
      */
     @GetMapping("/{companyId}")
     public ResponseEntity<CompanyFullInfoDto> company(@PathVariable long companyId) throws IOException {
-        CompanyFullInfoDto fullInfo = companyInfoFacadeService.fetchCompanyInfo(companyId);
+        CompanyFullInfoDto fullInfo = companyInfoFacadeDataService.fetchCompanyInfo(companyId);
         return ResponseEntity.ok(fullInfo);
     }
 }

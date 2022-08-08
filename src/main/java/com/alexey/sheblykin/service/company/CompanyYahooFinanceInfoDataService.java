@@ -1,9 +1,9 @@
-package com.alexey.sheblykin.service;
+package com.alexey.sheblykin.service.company;
 
-import com.alexey.sheblykin.dto.CompanyFullInfoDto;
-import com.alexey.sheblykin.dto.CompanyNamesDto;
-import com.alexey.sheblykin.dto.CompanyYahooFinanceExecutiveDto;
-import com.alexey.sheblykin.dto.CompanyYahooFinanceInfoDto;
+import com.alexey.sheblykin.dto.company.CompanyFullInfoDto;
+import com.alexey.sheblykin.dto.company.CompanyNamesDto;
+import com.alexey.sheblykin.dto.company.CompanyYahooFinanceExecutiveDto;
+import com.alexey.sheblykin.dto.company.CompanyYahooFinanceInfoDto;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

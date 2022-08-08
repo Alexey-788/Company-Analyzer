@@ -1,7 +1,8 @@
-package com.alexey.sheblykin.service;
+package com.alexey.sheblykin.service.vacancy;
 
-import com.alexey.sheblykin.dto.CompanyNamesDto;
-import com.alexey.sheblykin.dto.VacancyIndeedInfoDto;
+import com.alexey.sheblykin.dto.company.CompanyNamesDto;
+import com.alexey.sheblykin.dto.vacancy.VacancyIndeedInfoDto;
+import com.alexey.sheblykin.service.company.CompanyNamesService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,9 +1,9 @@
 package com.alexey.sheblykin.controller;
 
-import com.alexey.sheblykin.dto.CompanyFullInfoDto;
-import com.alexey.sheblykin.dto.CompanyNamesDto;
-import com.alexey.sheblykin.service.CompanyInfoFacadeService;
-import com.alexey.sheblykin.service.CompanyNamesService;
+import com.alexey.sheblykin.dto.company.CompanyFullInfoDto;
+import com.alexey.sheblykin.dto.company.CompanyNamesDto;
+import com.alexey.sheblykin.service.company.CompanyInfoFacadeDataService;
+import com.alexey.sheblykin.service.company.CompanyNamesService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +35,7 @@ class CompanyControllerTest {
     CompanyNamesService companyNamesService;
 
     @MockBean
-    CompanyInfoFacadeService companyInfoFacadeService;
+    CompanyInfoFacadeDataService companyInfoFacadeDataService;
 
     @Test
     void namesList_WithThreeNames_ReturnsRightNames() throws Exception {
@@ -71,7 +71,7 @@ class CompanyControllerTest {
     void company_WithExistingCompany_ReturnRightCompany() throws Exception {
         CompanyFullInfoDto companyInfo = new CompanyFullInfoDto(3, "Company", null, null);
 
-        when(companyInfoFacadeService.fetchCompanyInfo(3)).thenReturn(companyInfo);
+        when(companyInfoFacadeDataService.fetchCompanyInfo(3)).thenReturn(companyInfo);
 
         mockMvc.perform(get("/company/3"))
                 .andDo(print())
@@ -83,7 +83,7 @@ class CompanyControllerTest {
 
     @Test
     void company_WithNonExistingCompany_ReturnNotFound() throws Exception {
-        when(companyInfoFacadeService.fetchCompanyInfo(0)).thenThrow(new EntityNotFoundException());
+        when(companyInfoFacadeDataService.fetchCompanyInfo(0)).thenThrow(new EntityNotFoundException());
 
         mockMvc.perform(get("/company/0"))
                 .andDo(print())
@@ -92,7 +92,7 @@ class CompanyControllerTest {
 
     @Test
     void company_WithNegativeCompanyId_ReturnNotFound() throws Exception {
-        when(companyInfoFacadeService.fetchCompanyInfo(-1)).thenThrow(new EntityNotFoundException());
+        when(companyInfoFacadeDataService.fetchCompanyInfo(-1)).thenThrow(new EntityNotFoundException());
 
         mockMvc.perform(get("/company/-1"))
                 .andDo(print())

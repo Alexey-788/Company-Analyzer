@@ -1,11 +1,11 @@
-package com.alexey.sheblykin.service;
+package com.alexey.sheblykin.service.vacancy;
 
-import com.alexey.sheblykin.dto.VacancyIndeedInfoDto;
+import com.alexey.sheblykin.dto.vacancy.VacancyIndeedInfoDto;
+import com.alexey.sheblykin.service.company.CompanyNamesService;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +16,7 @@ import java.util.List;
 @Service
 public class VacancyDataService {
 
-    @Autowired
-    private CompanyNamesService companyNamesService;
+    private final CompanyNamesService companyNamesService;
 
     @Value("${vacancy.page.size}")
     private int pageSize;

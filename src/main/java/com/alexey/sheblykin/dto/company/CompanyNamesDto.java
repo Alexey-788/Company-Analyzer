@@ -1,4 +1,4 @@
-package com.alexey.sheblykin.dto;
+package com.alexey.sheblykin.dto.company;
 
 import com.alexey.sheblykin.entity.CompanyEntity;
 

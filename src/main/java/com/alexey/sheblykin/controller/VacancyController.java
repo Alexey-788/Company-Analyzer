@@ -1,7 +1,7 @@
 package com.alexey.sheblykin.controller;
 
-import com.alexey.sheblykin.dto.VacancyIndeedInfoDto;
-import com.alexey.sheblykin.service.VacancyDataService;
+import com.alexey.sheblykin.dto.vacancy.VacancyIndeedInfoDto;
+import com.alexey.sheblykin.service.vacancy.VacancyDataService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
