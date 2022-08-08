@@ -1,7 +1,7 @@
-package com.alexey.sheblykin.service;
+package com.alexey.sheblykin.service.company;
 
-import com.alexey.sheblykin.dto.CompanyFullInfoDto;
-import com.alexey.sheblykin.dto.CompanyNamesDto;
+import com.alexey.sheblykin.dto.company.CompanyFullInfoDto;
+import com.alexey.sheblykin.dto.company.CompanyNamesDto;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -12,12 +12,12 @@ import java.util.List;
  * by names provided by {@link CompanyNamesService}.
  */
 @Service
-public class CompanyInfoFacadeService {
+public class CompanyInfoFacadeDataService {
 
     private final List<ICompanyInfoDataService<?>> infoDataServices;
     private final CompanyNamesService companyNamesService;
 
-    public CompanyInfoFacadeService(List<ICompanyInfoDataService<?>> infoDataServices, CompanyNamesService companyNamesService) {
+    public CompanyInfoFacadeDataService(List<ICompanyInfoDataService<?>> infoDataServices, CompanyNamesService companyNamesService) {
         this.infoDataServices = infoDataServices;
         this.companyNamesService = companyNamesService;
     }

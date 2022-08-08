@@ -1,6 +1,6 @@
-package com.alexey.sheblykin.service;
+package com.alexey.sheblykin.service.company;
 
-import com.alexey.sheblykin.dto.CompanyNamesDto;
+import com.alexey.sheblykin.dto.company.CompanyNamesDto;
 import com.alexey.sheblykin.entity.CompanyEntity;
 import com.alexey.sheblykin.repository.CompanyRepository;
 import org.springframework.stereotype.Service;

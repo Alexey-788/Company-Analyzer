@@ -1,4 +1,4 @@
-package com.alexey.sheblykin.dto;
+package com.alexey.sheblykin.dto.company;
 
 import java.math.BigDecimal;
 import java.util.List;

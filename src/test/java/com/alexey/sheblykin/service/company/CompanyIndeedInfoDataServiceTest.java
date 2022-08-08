@@ -1,7 +1,8 @@
-package com.alexey.sheblykin.service;
+package com.alexey.sheblykin.service.company;
 
-import com.alexey.sheblykin.dto.CompanyIndeedInfoDto;
-import com.alexey.sheblykin.dto.CompanyNamesDto;
+import com.alexey.sheblykin.dto.company.CompanyIndeedInfoDto;
+import com.alexey.sheblykin.dto.company.CompanyNamesDto;
+import com.alexey.sheblykin.service.company.CompanyIndeedInfoDataService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
