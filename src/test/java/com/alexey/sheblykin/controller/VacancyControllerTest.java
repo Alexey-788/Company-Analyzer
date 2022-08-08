@@ -34,14 +34,14 @@ class VacancyControllerTest {
 
     @Test
     void vacancyListOfCompany_WithThreeVacancies_ReturnsRightVacancies() throws Exception {
-        List<VacancyIndeedInfoDto> baseInfoList = List.of(
+        List<VacancyIndeedInfoDto> infoList = List.of(
                 new VacancyIndeedInfoDto("0", "Title1", "Location1", "Salary1", "Date1"),
                 new VacancyIndeedInfoDto("1", "Title2", "Location2", "Salary2", "Date2"),
                 new VacancyIndeedInfoDto("2", "Title3", "Location3", "Salary3", "Date3")
         );
 
         when(vacancyDataService.loadCompanyVacancies(0, 0))
-                .thenReturn(baseInfoList);
+                .thenReturn(infoList);
 
         mockMvc.perform(get("/vacancy/page/0/company/0"))
                 .andDo(print())
@@ -55,10 +55,10 @@ class VacancyControllerTest {
 
     @Test
     void vacancyListOfCompany_WithEmptyVacancyList_ReturnsEmptyJson() throws Exception {
-        List<VacancyIndeedInfoDto> baseInfoList = List.of();
+        List<VacancyIndeedInfoDto> infoList = List.of();
 
         when(vacancyDataService.loadCompanyVacancies(0, 0))
-                .thenReturn(baseInfoList);
+                .thenReturn(infoList);
 
         mockMvc.perform(get("/vacancy/page/0/company/0"))
                 .andDo(print())

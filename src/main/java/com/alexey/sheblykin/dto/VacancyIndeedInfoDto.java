@@ -4,6 +4,9 @@ import java.util.Objects;
 
 public class VacancyIndeedInfoDto {
 
+    /**
+     * Id is taken from an external site in the form of 16 hex of numbers.
+     */
     private String id;
     private String title;
     private String location;
@@ -66,11 +69,11 @@ public class VacancyIndeedInfoDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VacancyIndeedInfoDto that = (VacancyIndeedInfoDto) o;
-        return Objects.equals(getTitle(), that.getTitle()) && Objects.equals(getLocation(), that.getLocation()) && Objects.equals(getSalary(), that.getSalary()) && Objects.equals(getDate(), that.getDate());
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getTitle(), that.getTitle()) && Objects.equals(getLocation(), that.getLocation()) && Objects.equals(getSalary(), that.getSalary()) && Objects.equals(getDate(), that.getDate());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getTitle(), getLocation(), getSalary(), getDate());
+        return Objects.hash(getId(), getTitle(), getLocation(), getSalary(), getDate());
     }
 }
