@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class VacancyIndeedInfoDto {
 
-    private long id;
+    private String id;
     private String title;
     private String location;
     private String salary;
@@ -13,7 +13,7 @@ public class VacancyIndeedInfoDto {
     public VacancyIndeedInfoDto() {
     }
 
-    public VacancyIndeedInfoDto(long id, String title, String location, String salary, String date) {
+    public VacancyIndeedInfoDto(String id, String title, String location, String salary, String date) {
         this.id = id;
         this.title = title;
         this.location = location;
@@ -21,11 +21,11 @@ public class VacancyIndeedInfoDto {
         this.date = date;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

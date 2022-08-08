@@ -8,3 +8,10 @@ spring:
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: update
+
+vacancy:
+  page:
+    size: 100
+    #sizeInUrl shows after overcoming what number Indeed flows the vacancy page.
+    #With a real number of vacancies has nothing to do, because caused by the bag on Indeed.
+    sizeInUrl: 150
